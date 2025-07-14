@@ -1,0 +1,54 @@
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    padding: 30px;
+    background-color: #09091b;
+}
+
+.esquerda{
+    display: flex;
+    align-items: center;
+    gap:30px;
+}
+
+.esquerda img{
+    width: auto;
+    height: 30px;
+}
+
+.esquerda div{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.esquerda div img{
+    width: auto;
+    height: 25px;
+}
+
+footer h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.logo img{
+    height: 50px;
+    width: auto;
+}
+
+.direita{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.direita img{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    right: -60%;
+}   
