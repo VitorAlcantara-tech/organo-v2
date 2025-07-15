@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import './lista-suspensa.css'
 import { FaRegTrashAlt } from "react-icons/fa";
 
 
-const ListaSuspensa = ({ label, items, valor, aoAlterado, obrigatorio, aoDeletar }) => {
+const ListaSuspensa = ({ label, items, valor, aoAlterado, obrigatorio, deletarTime }) => {
+
     return (
         <div className="lista-suspensa">
             <label>{label}</label>
@@ -10,22 +12,27 @@ const ListaSuspensa = ({ label, items, valor, aoAlterado, obrigatorio, aoDeletar
                 <select required={obrigatorio} value={valor} onChange={evento => aoAlterado(evento.target.value)}>
                     <option value="">-- Selecione --</option>
                     {items.map(item =>
-                        <option key={item}>{item}</option>
-                    )
-                    }
+                        <option key={item} value={item}>{item}</option>
+                    )}
                 </select>
                 {valor && (
                     <button
-                        onClick={() => aoDeletar(valor)}
-                        title="Excluir time"
-                        style={{border: 'none', cursor: 'pointer'}}
+                        onClick={() => {
+                            const confirmacao = window.confirm(`Tem certeza que deseja excluir o time "${valor}"?`);
+                            if (confirmacao) {
+                                deletarTime(valor);
+                            }
+                        }}
+                        style={{ border: 'none', cursor: 'pointer' }}
                     >
                         <FaRegTrashAlt size={25} />
                     </button>
                 )}
+
             </div>
         </div>
     )
 }
 
-export default ListaSuspensa
+
+export default ListaSuspensa;

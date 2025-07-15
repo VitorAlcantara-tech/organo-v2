@@ -12,7 +12,8 @@ const Campo = ({ type = 'text', label, placeholder, valor, aoAlterado, obrigator
                 type={type}
                 value={valor}
                 onChange={evento => aoAlterado(evento.target.value)}
-                required={obrigatorio} placeholder={placeholder}
+                required={obrigatorio}
+                placeholder={placeholder}
             />
         </div>
     )

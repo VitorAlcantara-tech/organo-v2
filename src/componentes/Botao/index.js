@@ -2,9 +2,11 @@ import './botao.css'
 
 const Botao = ({ texto }) => {
     return (
-        <button className="botao">
-            {texto}
-        </button>
+        <div className='botao__container'>
+            <button className="botao">
+                {texto}
+            </button>
+        </div>
     )
 }
 

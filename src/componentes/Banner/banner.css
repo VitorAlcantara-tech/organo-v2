@@ -6,3 +6,9 @@
 .cabecalho img {
     max-width: 100%;
 }
+
+@media (max-width: 680px) {
+    .cabecalho {
+        display: none;
+    }
+}
